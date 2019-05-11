@@ -1,0 +1,208 @@
+
+// #11998e
+// #38ef7d
+// https://online.crohnscolitisfoundation.org/images/content/pagebuilder/how_it_works_hero.jpg
+
+$font-fam-serifs: 'PT Serif', serif;
+$font-fam-sans: 'Lato', sans-serif;
+
+$c-dark-grey: #666666;
+$c-yellow-accent: #f7ca00;
+$c-green-1: #8cc62b;
+$c-green-2: #269d41;
+
+$grid-size: 8px;
+$gutter: 25px;
+$bg-cutover: 340px;
+
+
+/* Shared Layout & Global Styles
+========================================================================== */
+html, body, div, span, applet, object, iframe,
+p, blockquote, pre, a, abbr, acronym, code,
+em, img, ins, kbd, q, s, samp, small, strike,
+strong, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav {
+	font-family: $font-fam-sans;
+	color: $c-dark-grey;
+	line-height: 1.2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-fam-serifs;
+	margin-bottom: $grid-size;
+}
+
+h1, .h1 {
+	font-size: 2.5rem;
+}
+
+h2, .h2 {
+	font-size: 2rem;
+}
+
+h3, .h3 {
+	font-size: 1.75rem;
+}
+
+h4, .h4 {
+	font-size: 1.5rem;
+}
+
+h5, .h5 {
+	font-size: 1.25rem;
+}
+
+h6, .h6 {
+	font-size: 1rem;
+}
+
+.center {
+	text-align: center;
+}
+
+.my-2 {
+
+}
+
+.row {
+  min-height: 100px;
+  padding-left: $gutter;
+  padding-right: $gutter;
+}
+
+.btn {
+	background: $c-yellow-accent;
+	padding: 14px;
+	text-decoration: none;
+
+}
+
+.bordered {
+
+}
+
+.emphasis {
+	font-weight: bold;
+	font-style: italic;
+}
+
+/* Header
+========================================================================== */
+.header {
+	  &:before {
+		z-index: -100;
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: $bg-cutover;
+		background: #0f8a9d;
+		background: linear-gradient(57deg, $c-green-1 0%, $c-green-2 100%);
+		-webkit-transform-origin: 0;
+		transform-origin: 0;
+		-webkit-transform: skewY(-8deg);
+		transform: skewY(-8deg);
+	}
+
+	&__logo {
+		max-height: 55px;
+		padding: 8px;
+	}
+
+	&__floating-outro {
+		position: fixed;
+		top: 15%;
+		right: 0;
+		transform: rotate(45deg);
+	}
+}
+
+
+/* Banner
+========================================================================== */
+.banner {
+	display: grid;
+	grid-template-columns: repeat(auto-fit , minmax(200px, 1fr));
+	grid-template-rows: auto;
+	grid-gap: 1em;
+
+	&__content {
+		min-height: $bg-cutover;
+
+		figure {
+			height: 85%;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
+
+
+/* Donate
+========================================================================== */
+
+.spend-calc {
+	display: grid;
+	grid-template-rows: repeat(auto-fill, 100%);
+
+	&__row {
+		display: grid;
+		align-items: baseline;
+		grid-template-areas: "check label amt total";
+		grid-template-columns: minmax(35px, 20%) minmax(35px, 30%) minmax(35px, 25%) minmax(35px, 25%);
+
+		& > div {
+			padding-top: $grid-size;
+			padding-bottom: $grid-size;
+		}
+	}
+
+	&__check {
+		grid-area: check;
+	}
+
+	&__label {
+		grid-area: label;
+	}
+
+	&__amount {
+		grid-area: amt;
+		input {
+			display: inline;
+			width: 70px;
+			font-size: 1em;
+		}
+	}
+
+	&__total {
+		grid-area: total;
+	}
+
+}
+
+.checkbox {
+	width: $btn-width;
+	height: $btn-height;
+	position: relative;
+}
+
+
+/* Final
+========================================================================== */
+
+
+
+/* Footer
+========================================================================== */
+
+
+
+

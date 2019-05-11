@@ -1,0 +1,118 @@
+/* Shared Layout & Global Styles
+ ========================================================================== */
+* {
+  font-family: 'Lato', sans-serif;
+  color: #666;
+  font-size: 1.5em;
+  line-height: 1.2;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'PT Serif', serif;
+  margin-bottom: 8px;
+}
+h1, .h1 {
+  font-size: 2.5rem;
+}
+h2, .h2 {
+  font-size: 2rem;
+}
+h3, .h3 {
+  font-size: 1.75rem;
+}
+h4, .h4 {
+  font-size: 1.5rem;
+}
+h5, .h5 {
+  font-size: 1.25rem;
+}
+h6, .h6 {
+  font-size: 1rem;
+}
+.row {
+  min-height: 100px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.emphasis {
+  font-weight: bold;
+  font-style: italic;
+}
+/* Header
+ ========================================================================== */
+.header:before {
+  z-index: -100;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 340px;
+  background: #0f8a9d;
+  background: linear-gradient(57deg, #8cc62b 0%, #269d41 100%);
+  -webkit-transform-origin: 0;
+  transform-origin: 0;
+  -webkit-transform: skewY(-8deg);
+  transform: skewY(-8deg);
+}
+.header__logo {
+  max-height: 55px;
+  padding: 8px;
+}
+.header__floating-outro {
+  position: fixed;
+  top: 15%;
+  right: 0;
+  transform: rotate(45deg);
+}
+/* Banner
+ ========================================================================== */
+.banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-rows: auto;
+}
+.banner__content {
+  min-height: 340px;
+}
+.banner__content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Donate
+ ========================================================================== */
+.spend-calc {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, 100%);
+}
+.spend-calc__row {
+  display: grid;
+  align-items: baseline;
+  grid-template-areas: "check label amt total";
+  grid-template-columns: minmax(35px, 20%) minmax(35px, 30%) minmax(35px, 25%) minmax(35px, 25%);
+}
+.spend-calc__row > div {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.spend-calc__check {
+  grid-area: check;
+}
+.spend-calc__label {
+  grid-area: label;
+}
+.spend-calc__amount {
+  grid-area: amt;
+}
+.spend-calc__amount input {
+  display: inline;
+  width: 70px;
+  font-size: 1em;
+}
+.spend-calc__total {
+  grid-area: total;
+}
+/* Final
+ ========================================================================== */
+/* Footer
+ ========================================================================== */
