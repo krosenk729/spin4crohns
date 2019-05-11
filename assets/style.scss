@@ -3,17 +3,17 @@
 // #38ef7d
 // https://online.crohnscolitisfoundation.org/images/content/pagebuilder/how_it_works_hero.jpg
 
-$font-fam-serifs: 'PT Serif', serif;
-$font-fam-sans: 'Lato', sans-serif;
+$font-fam-headers: 'Poppins', sans-serif;
+$font-fam-body: 'Open Sans', sans-serif;
 
 $c-dark-grey: #666666;
 $c-yellow-accent: #f7ca00;
+$c-blue-accent: #b4da55;
 $c-green-1: #8cc62b;
 $c-green-2: #269d41;
 
 $grid-size: 8px;
 $gutter: 25px;
-$bg-cutover: 340px;
 
 
 /* Shared Layout & Global Styles
@@ -25,14 +25,16 @@ strong, ol, ul, li, fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, figure,
 figcaption, footer, header, hgroup, menu, nav {
-	font-family: $font-fam-sans;
+	font-family: $font-fam-body;
 	color: $c-dark-grey;
 	line-height: 1.2;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: $font-fam-serifs;
-	margin-bottom: $grid-size;
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-weight: 900;
+	font-family: $font-fam-headers;
+	margin-bottom: 0.5em;
 }
 
 h1, .h1 {
@@ -59,12 +61,17 @@ h6, .h6 {
 	font-size: 1rem;
 }
 
+p {
+	margin-bottom: 1em;
+}
+
 .center {
 	text-align: center;
 }
 
 .my-2 {
-
+	margin-top: 2em;
+	margin-bottom: 2em;
 }
 
 .row {
@@ -91,33 +98,42 @@ h6, .h6 {
 
 /* Header
 ========================================================================== */
+$bg-cutover: 470px;
+
 .header {
-	  &:before {
+	min-height: $grid-size * 2;
+
+	&:before {
 		z-index: -100;
 		content: "";
 		position: absolute;
-		top: 0;
+		top: -75px;
 		left: 0;
 		width: 100%;
 		height: $bg-cutover;
-		background: #0f8a9d;
+		background: $c-green-2;
 		background: linear-gradient(57deg, $c-green-1 0%, $c-green-2 100%);
-		-webkit-transform-origin: 0;
-		transform-origin: 0;
-		-webkit-transform: skewY(-8deg);
-		transform: skewY(-8deg);
-	}
+		-webkit-transform-origin: bottom;
+		transform-origin: bottom;
+		-webkit-transform: skewY(4deg);
+		transform: skewY(4deg);
 
-	&__logo {
-		max-height: 55px;
-		padding: 8px;
+		@media screen and (max-width: 600px) {
+			height: 1.7 * $bg-cutover;
+		}
 	}
 
 	&__floating-outro {
 		position: fixed;
-		top: 15%;
-		right: 0;
-		transform: rotate(45deg);
+		top: 46px;
+		right: -96px;
+		transform: rotate(35deg);
+		background: $c-yellow-accent;
+		padding: $grid-size/2 100px;
+
+		a {
+			text-decoration: none;
+		}
 	}
 }
 
@@ -126,12 +142,20 @@ h6, .h6 {
 ========================================================================== */
 .banner {
 	display: grid;
-	grid-template-columns: repeat(auto-fit , minmax(200px, 1fr));
+	grid-template-columns: minmax(200px, 65%) minmax(200px, 35%);
 	grid-template-rows: auto;
 	grid-gap: 1em;
 
+	@media screen and (max-width: 600px) {
+		grid-template-columns: 1fr;
+	}
+
 	&__content {
-		min-height: $bg-cutover;
+		margin-bottom: 1em;
+
+		h1, p {
+			mix-blend-mode: difference;
+		}
 
 		figure {
 			height: 85%;
@@ -141,7 +165,13 @@ h6, .h6 {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+			&.logo {
+				max-height: 40px;
+				width: auto;
+				mix-blend-mode: normal;
+			}
 		}
+
 	}
 }
 
@@ -188,10 +218,77 @@ h6, .h6 {
 
 }
 
+$toggle-padding: 4px;
+$toggle-height: 25px;
+$toggle-width: 75px;
 .checkbox {
-	width: $btn-width;
-	height: $btn-height;
+	width: $toggle-width;
+	height: $toggle-height;
 	position: relative;
+
+	&__input {		
+		position: relative;
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		background: #f00;
+		margin: 0;
+		padding: 0;
+		cursor: pointer;
+		opacity: 0;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+	}
+
+	&__toggle {
+		background: #f00;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		background-color: #BEEB9F;
+		line-height: 1;
+		color: #fff;
+		transition: background-color .15s ease-out;
+		border-radius: 2px;
+		text-transform: uppercase;
+		font-size: 12px;
+		font-weight: 700;
+		border-radius: $toggle-height;
+
+		&::before {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			top: $toggle-padding;
+			left: $toggle-padding;
+			bottom: $toggle-padding;
+			padding: 0 12px;
+			border-radius: 2px;
+			background-color: #FF6138;
+			content: attr(data-label-unchecked);
+			transition: all .15s ease-out;
+			min-width: $toggle-height - (2 * $toggle-padding);
+			border-radius: $toggle-height;
+		}
+
+		.checkbox__input:hover + & {
+			background-color: #BAE59B;
+		}
+
+		.checkbox__input:active + &::before {
+			padding: 0 20px;
+		}
+
+		.checkbox__input:checked + &::before {
+			background-color: #79BD8F;
+			content: attr(data-label-checked);
+			left: calc(100% - #{$toggle-padding});
+			transform: translateX(-100%);
+		}		
+	}
 }
 
 

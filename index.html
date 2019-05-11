@@ -6,30 +6,28 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="assets/reset.css">
-	<link href="https://fonts.googleapis.com/css?family=Lato|PT+Serif" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Poppins:900" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
 <body>
-	<header class="row header">
-		<img
-			class="header__logo"
-			src="assets/logo_white.png"
-			alt="logo for the Spin for Crohns ride" />
+	<header class="header">
 		<div class="header__floating-outro">
 			<a href="https://online.crohnscolitisfoundation.org/site/Donation2?idb=122457690&df_id=28291&FR_ID=8416&mfc_pref=T&28291.donation=form1&PROXY_ID=2976252&PROXY_TYPE=20">
-				Make a Donation Now
+				Go To Donation Page
 			</a>
 		</div>
 	</header>
 	<div class="row banner">
 		<div class="banner__content">
+			<img
+				class="logo"
+				src="assets/logo_white.png"
+				alt="logo for the Spin for Crohns ride" />
 			<h1>Donate to Spin4Crohns</h1>
-			The spin4 crohn’s & colitis cures is an event to <span class="emphasis">pedal with a purpose</span>  to help support and find cures for those living chronic, digestive diseases.
-			<h2>What & Why</h2>
-			<sub>research, awareness, and patient services</sub>
-			More than 80 cents of every dollar raised goes towards breakthrough research, public and professional education, and patient support services in communities across the nation.
-			<br>
-			Today, both the Crohn's & Colitis Foundation and the National Institutes of Health (NIH) actively support research in the field, and there are approximately 80 new therapies in the pipeline.
+			<p>The spin4 crohn’s & colitis cures is an event to <span class="emphasis">pedal with a purpose</span>  to help support and find cures for those living chronic, digestive diseases.</p>
+			<p>I will ride in honor of the estimated 3 million Americans affected by these debilitating digestive diseases. While many suffer in silence, spin4 crohn’s & colitis cures will bring the community together in a fun, energetic and supportive atmosphere.</p>
+			<p>Today, both the Crohn's & Colitis Foundation and the National Institutes of Health (NIH) actively support research in the field, and there are approximately 80 new therapies in the pipeline.</p>
+			<p>The more money we raise, the closer we will be to making life more manageable for patients who live with these diseases every day.</p>
 		</div>
 		<div class="banner__content center">
 			<figure>
@@ -45,6 +43,7 @@
 			</a>
 		</div>
 	</div>
+	<div class="center my-2">🚴‍♂️🎉🚴‍♂️🎉🚴‍♂️🎉🚴‍♂️</div>
 	<section class="row calculator">
 		<h2>Match Your Streaming Spending</h2>
 		<p>I'm asking you to match your spending on Netflix, Hulu, HBO, Disney TV, and whatever other streaming services you pay for. Pretend the year has an extra month and just put that difference into the donations bank -- both your tax return and I will thank you.</p>
@@ -61,53 +60,131 @@
 					Netflix
 				</div>
 				<div class="spend-calc__amount">
-					<input type="number" name="netflix_price" /> / month
+					<input type="number" name="netflix_price" value="12.99" /> / month
 				</div>
-				<div class="spend-calc__total">
-					$ 100
+			</div>
+			<div class="spend-calc__row">
+				<div class="spend-calc__check">
+					<div class="checkbox">
+					<input class="checkbox__input" type="checkbox" name="netflix_on" />
+					<div class="checkbox__toggle" data-label-checked="✔️" data-label-unchecked="🚫"></div>
+					</div>
+				</div>
+				<div class="spend-calc__label">
+					Hulu
+				</div>
+				<div class="spend-calc__amount">
+					<input type="number" name="hulu_price" value="11.99" /> / month
+				</div>
+			</div>
+			<div class="spend-calc__row">
+				<div class="spend-calc__check">
+					<div class="checkbox">
+					<input class="checkbox__input" type="checkbox" name="netflix_on" />
+					<div class="checkbox__toggle" data-label-checked="✔️" data-label-unchecked="🚫"></div>
+					</div>
+				</div>
+				<div class="spend-calc__label">
+					HBO Go
+				</div>
+				<div class="spend-calc__amount">
+					<input type="number" name="hbo_price" /> / month
+				</div>
+			</div>
+			<div class="spend-calc__row">
+				<div class="spend-calc__check">
+					<div class="checkbox">
+					<input class="checkbox__input" type="checkbox" name="netflix_on" />
+					<div class="checkbox__toggle" data-label-checked="✔️" data-label-unchecked="🚫"></div>
+					</div>
+				</div>
+				<div class="spend-calc__label">
+					Amazon Prime
+				</div>
+				<div class="spend-calc__amount">
+					<input type="number" name="amazonprime_price" /> / month
+				</div>
+			</div>
+			<div class="spend-calc__row">
+				<div class="spend-calc__check">
+					<div class="checkbox">
+					<input class="checkbox__input" type="checkbox" name="netflix_on" />
+					<div class="checkbox__toggle" data-label-checked="✔️" data-label-unchecked="🚫"></div>
+					</div>
+				</div>
+				<div class="spend-calc__label">
+					DirecTV
+				</div>
+				<div class="spend-calc__amount">
+					<input type="number" name="directv_price" /> / month
+				</div>
+			</div>
+			<div class="spend-calc__row">
+				<div class="spend-calc__check">
+					<div class="checkbox">
+					<input class="checkbox__input" type="checkbox" name="netflix_on" />
+					<div class="checkbox__toggle" data-label-checked="✔️" data-label-unchecked="🚫"></div>
+					</div>
+				</div>
+				<div class="spend-calc__label">
+					Disney Plus
+				</div>
+				<div class="spend-calc__amount">
+					<input type="number" name="disney_price" /> / month
 				</div>
 			</div>
 			<div class="spend-calc__row--total">
 				<div class="spend-calc__check"></div>
-				<div class="spend-calc__label"></div>
+				<div class="spend-calc__label">
+					Total
+				</div>
 				<div class="spend-calc__amount"></div>
 			</div>
 		</div>
-		<div>
+		<div class="my-2 center">
 			<a
 				href="https://online.crohnscolitisfoundation.org/site/Donation2?idb=122457690&df_id=28291&FR_ID=8416&mfc_pref=T&28291.donation=form1&PROXY_ID=2976252&PROXY_TYPE=20"
-				class="scoot-up btn">
+				class="btn">
 				Make a Donation Now
 			</a>
 		</div>
 
 		<h4>Don't Stream Any Services?</h4>
-		<p>That must mean you have more to give! Totally kidding, but your donation is much appreciated too, and $35 is a dollar amount to start with.</p>
-		<div>
+		<p>That must mean you have more to give! Totally kidding, but your donation is much appreciated too, and $35 is a dollar amount to start with. Over eighty cents per dollar will go directly to patients.</p>
+		<div class="my-2 center">
 			<a
 				href="https://online.crohnscolitisfoundation.org/site/Donation2?idb=122457690&df_id=28291&FR_ID=8416&mfc_pref=T&28291.donation=form1&PROXY_ID=2976252&PROXY_TYPE=20"
-				class="scoot-up btn">
+				class="btn">
 				Make a Donation Now
 			</a>
 		</div>
 	</section>
 	<section class="row what-is">
-		<h2>What is Crohn's Disease?</h2>
+		<h2>Wait, What is Crohn's Disease?</h2>
 		<p>Well, it's not good...</p>
 		<p>Crohn's is a <span class="emphasis">chronic inflammatory condition</span> of the gastrointestinal tract -- which a really long, really important part of your body. If food flows through it from when you eat to when you 💩, it is a part of the GI tract. Now imagine if that tract has inflammation and that inflamamation does not subside - it's chronic. Not ideal right?</p>
 		<p>There is no cure to crohn's but there are treatment options to help with flare-ups and prevent relapses... but half of all patients with crohn's require surgery in the first ten years following diagnosis, and 20% are admitted to the hospital each year. <a href="https://online.crohnscolitisfoundation.org/site/SPageServer/?pagename=awareness_stories_home" target="_blank">Click here to read patient stories of living with Crohn's & Colitis.</a></p>
-		<div>
-			<div>780K</div>
-			Americans affected
-		</div>
-		<div>
-			<div>1 in 5</div>
-			with the disease is admitted to the hospital each year
-		</div>
 	</section>
-	<footer class="row footer">
-		
-	</footer>
+	<script>
+		(function(){
+			var calcTotals = function(){
+				var rows = document.querySelectorAll('.spend-calc__row');
+				var total = 0;
+				for(var i = 0, l = rows.length; i < l; i++ ) {
+				  var [check, label, amt, ...rest] = rows[i].children;
+				  var isChecked = check.children[0].firstElementChild.checked;
+				  if(!isChecked) { continue; }
+				  var cost = amt.children[0].value;
+				  total += Number(cost);
+				}
+				document.querySelector('.spend-calc__row--total .spend-calc__amount').innerText = total;
+			};
+
+			document.querySelectorAll('input').forEach(function(node){
+				node.onchange = calcTotals;
+			});
+		})();
+	</script>
 	<aside class="row sources">
 		<h4>Sources for Citings & Further Reading</h4>
 		<ul>
