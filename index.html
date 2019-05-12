@@ -13,7 +13,7 @@
 	<header class="header">
 		<div class="header__floating-outro">
 			<a href="https://online.crohnscolitisfoundation.org/site/Donation2?idb=122457690&df_id=28291&FR_ID=8416&mfc_pref=T&28291.donation=form1&PROXY_ID=2976252&PROXY_TYPE=20">
-				Go To Donation Page
+				👉 Go To Donation Page 👈
 			</a>
 		</div>
 	</header>
@@ -42,11 +42,18 @@
 				Make a Donation Now
 			</a>
 		</div>
+		<span class="banner__bg-clip">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2600 131.1" preserveAspectRatio="none">
+				<path class="elementor-shape-fill" d="M0 0L2600 0 2600 69.1 0 0z"></path>
+				<path class="elementor-shape-fill" style="opacity:0.5" d="M0 0L2600 0 2600 69.1 0 69.1z"></path>
+				<path class="elementor-shape-fill" style="opacity:0.25" d="M2600 0L0 0 0 130.1 2600 69.1z"></path>
+			</svg>
+		</span>
 	</div>
-	<div class="center my-2">🚴‍♂️🎉🚴‍♂️🎉🚴‍♂️🎉🚴‍♂️</div>
-	<section class="row calculator">
+	<div class="center pt-1 h2">🚴‍♂️🎉🚴‍♂️🎉🚴‍♂️🎉🚴‍♂️</div>
+	<section class="row pt-1 calculator">
 		<h2>Match Your Streaming Spending</h2>
-		<p>I'm asking you to match your spending on Netflix, Hulu, HBO, Disney TV, and whatever other streaming services you pay for. Pretend the year has an extra month and just put that difference into the donations bank -- both your tax return and I will thank you.</p>
+		<p class="my-2">I'm asking you to match your spending on Netflix, Hulu, HBO, Disney TV, and whatever other streaming services you pay for. Pretend the year has some extra time in it and just put that difference into the donations bank – both your tax return and I will thank you.</p>
 		<h4>How Much Do You Spend?</h4>
 		<div class="spend-calc">
 			<div class="spend-calc__row">
@@ -60,7 +67,10 @@
 					Netflix
 				</div>
 				<div class="spend-calc__amount">
-					<input type="number" name="netflix_price" value="12.99" /> / month
+					<input type="number" name="netflix_price" name="netflix_price" value="12.99" step="0.01" />
+				</div>
+				<div class="spend-calc__qty">
+					<label name="netflix_price">/ month</label>
 				</div>
 			</div>
 			<div class="spend-calc__row">
@@ -74,7 +84,10 @@
 					Hulu
 				</div>
 				<div class="spend-calc__amount">
-					<input type="number" name="hulu_price" value="11.99" /> / month
+					<input type="number" name="hulu_price" name="hulu_price" value="11.99" step="0.01" />
+				</div>
+				<div class="spend-calc__qty">
+					<label name="hulu_price">/ month</label>
 				</div>
 			</div>
 			<div class="spend-calc__row">
@@ -88,7 +101,10 @@
 					HBO Go
 				</div>
 				<div class="spend-calc__amount">
-					<input type="number" name="hbo_price" /> / month
+					<input type="number" name="hbo_price" name="hbo_price" step="0.01" />
+				</div>
+				<div class="spend-calc__qty">
+					<label name="hbo_price">/ month</label>
 				</div>
 			</div>
 			<div class="spend-calc__row">
@@ -102,7 +118,10 @@
 					Amazon Prime
 				</div>
 				<div class="spend-calc__amount">
-					<input type="number" name="amazonprime_price" /> / month
+					<input type="number" name="amazonprime_price" name="amazonprime_price" step="0.01" />
+				</div>
+				<div class="spend-calc__qty">
+					<label name="amazonprime_price">/ month</label>
 				</div>
 			</div>
 			<div class="spend-calc__row">
@@ -116,7 +135,10 @@
 					DirecTV
 				</div>
 				<div class="spend-calc__amount">
-					<input type="number" name="directv_price" /> / month
+					<input type="number" name="directv_price" name="directv_price" step="0.01" />
+				</div>
+				<div class="spend-calc__qty">
+					<label name="directv_price">/ month</label>
 				</div>
 			</div>
 			<div class="spend-calc__row">
@@ -130,15 +152,25 @@
 					Disney Plus
 				</div>
 				<div class="spend-calc__amount">
-					<input type="number" name="disney_price" /> / month
+					<input type="number" name="disney_price" name="disney_price" step="0.01" />
+				</div>
+				<div class="spend-calc__qty">
+					<label name="disney_price">/ month</label>
 				</div>
 			</div>
-			<div class="spend-calc__row--total">
+			<div class="spend-calc__row spend-calc__row--total">
 				<div class="spend-calc__check"></div>
 				<div class="spend-calc__label">
 					Total
 				</div>
 				<div class="spend-calc__amount"></div>
+				<div class="spend-calc__qty">
+					<select>
+						<option value="1">/ month</option>
+						<option value="3">/ quarter</option>
+						<option value="12">/ year</option>
+					</select>
+				</div>
 			</div>
 		</div>
 		<div class="my-2 center">
@@ -148,51 +180,82 @@
 				Make a Donation Now
 			</a>
 		</div>
-
-		<h4>Don't Stream Any Services?</h4>
+		<div class="center pt-1 h2">🚴‍♂️🎉🚴‍♂️🎉🚴‍♂️🎉🚴‍♂️</div>
+		<h4 class="pt-1">Don't Stream Any Services?</h4>
 		<p>That must mean you have more to give! Totally kidding, but your donation is much appreciated too, and $35 is a dollar amount to start with. Over eighty cents per dollar will go directly to patients.</p>
 		<div class="my-2 center">
 			<a
 				href="https://online.crohnscolitisfoundation.org/site/Donation2?idb=122457690&df_id=28291&FR_ID=8416&mfc_pref=T&28291.donation=form1&PROXY_ID=2976252&PROXY_TYPE=20"
 				class="btn">
-				Make a Donation Now
+				Donate Anyway! 💰
 			</a>
 		</div>
+		<script>
+			(function(){
+				var calcTotals = function(){
+					var rows = document.querySelectorAll('.spend-calc__row');
+					var total = 0;
+					for(var i = 0, l = rows.length - 1; i < l; i++ ) {
+					  var [check, label, amt, ...rest] = rows[i].children;
+					  var isChecked = check.children[0].firstElementChild.checked;
+					  if(!isChecked) { continue; }
+					  var cost = amt.children[0].value;
+					  total += Number(cost);
+					}
+					document.querySelector('.spend-calc__row--total .spend-calc__amount').innerText = total;
+				};
+
+				document.querySelectorAll('input').forEach(function(node){
+					node.onchange = calcTotals;
+				});
+			})();
+		</script>
 	</section>
 	<section class="row what-is">
-		<h2>Wait, What is Crohn's Disease?</h2>
+		<span class="what-is__bg-clip">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2600 131.1" preserveAspectRatio="none">
+				<path class="elementor-shape-fill" d="M0 0L2600 0 2600 69.1 0 0z"></path>
+				<path class="elementor-shape-fill" style="opacity:0.5" d="M0 0L2600 0 2600 69.1 0 69.1z"></path>
+				<path class="elementor-shape-fill" style="opacity:0.25" d="M2600 0L0 0 0 130.1 2600 69.1z"></path>
+			</svg>
+		</span>
+		<h2 class="pt-1">Wait, What is Crohn's Disease?</h2>
 		<p>Well, it's not good...</p>
 		<p>Crohn's is a <span class="emphasis">chronic inflammatory condition</span> of the gastrointestinal tract -- which a really long, really important part of your body. If food flows through it from when you eat to when you 💩, it is a part of the GI tract. Now imagine if that tract has inflammation and that inflamamation does not subside - it's chronic. Not ideal right?</p>
 		<p>There is no cure to crohn's but there are treatment options to help with flare-ups and prevent relapses... but half of all patients with crohn's require surgery in the first ten years following diagnosis, and 20% are admitted to the hospital each year. <a href="https://online.crohnscolitisfoundation.org/site/SPageServer/?pagename=awareness_stories_home" target="_blank">Click here to read patient stories of living with Crohn's & Colitis.</a></p>
-	</section>
-	<script>
-		(function(){
-			var calcTotals = function(){
-				var rows = document.querySelectorAll('.spend-calc__row');
-				var total = 0;
-				for(var i = 0, l = rows.length; i < l; i++ ) {
-				  var [check, label, amt, ...rest] = rows[i].children;
-				  var isChecked = check.children[0].firstElementChild.checked;
-				  if(!isChecked) { continue; }
-				  var cost = amt.children[0].value;
-				  total += Number(cost);
-				}
-				document.querySelector('.spend-calc__row--total .spend-calc__amount').innerText = total;
-			};
+		<div class="center pt-1 h2">🚴‍♂️🎉🚴‍♂️🎉🚴‍♂️🎉🚴‍♂️</div>
+		<div class="center social">
+			<h3>Share This Page</h3>
+			<a class="social__share social__share--twitter" href="https://twitter.com/intent/tweet?text=" target="_blank">
+				<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter-square" class="svg-inline--fa fa-twitter-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"></path></svg>
+			</a>
+			<a class="social__share social__share--facebook" href="ttps://twitter.com/intent/tweet?text=" target="_blank">
+				<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-square" class="svg-inline--fa fa-facebook-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"></path></svg>
+			</a>
+			<a class="social__share social__share--email" target="_top">
+				<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope-square" class="svg-inline--fa fa-envelope-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM178.117 262.104C87.429 196.287 88.353 196.121 64 177.167V152c0-13.255 10.745-24 24-24h272c13.255 0 24 10.745 24 24v25.167c-24.371 18.969-23.434 19.124-114.117 84.938-10.5 7.655-31.392 26.12-45.883 25.894-14.503.218-35.367-18.227-45.883-25.895zM384 217.775V360c0 13.255-10.745 24-24 24H88c-13.255 0-24-10.745-24-24V217.775c13.958 10.794 33.329 25.236 95.303 70.214 14.162 10.341 37.975 32.145 64.694 32.01 26.887.134 51.037-22.041 64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z"></path></svg>
+			</a>
+		</div>
+		<script>
+			(function(){
+				var url = encodeURI( window.location.toString() );
+				var fb = 'https://www.facebook.com/sharer/sharer.php?u=<' + url;
+				var tw  = 'https://twitter.com/intent/tweet?text=' + url;
+				var em = 'mailto:?subject=' + encodeURIComponent('Donate to Spin4Crohns for Katherine') + '&body=' + encodeURIComponent('Donate to Spin4Crohns for Katherine by going to ') + url;
 
-			document.querySelectorAll('input').forEach(function(node){
-				node.onchange = calcTotals;
-			});
-		})();
-	</script>
-	<aside class="row sources">
-		<h4>Sources for Citings & Further Reading</h4>
-		<ul>
-			<li>https://www.crohnscolitisfoundation.org/research/research-success/</li>
-			<li>https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(12)60026-9/fulltext</li>
-			<li>https://www.gastrojournal.org/article/S0016-5085(11)01378-3/fulltext?referrer=https%3A%2F%2Fen.wikipedia.org%2F</li>
-			<li>https://www.clinicaltrialsgps.com/clinical-trials-indications/crohns-disease/</li>
-		</ul>
-	</aside>
+				// order twitter, facebook, email
+				var urls = [fb, tw, em];
+				var nodes = document.querySelectorAll('.social__share').forEach(function(n, i){
+					n.href = urls[i];
+				});
+
+			})();
+		</script>
+	</section>
+	<footer class="footer center">
+		<a href="https://online.crohnscolitisfoundation.org/site/Donation2?idb=122457690&df_id=28291&FR_ID=8416&mfc_pref=T&28291.donation=form1&PROXY_ID=2976252&PROXY_TYPE=20">
+			👉 Go to Make a Donation 👈
+		</a>
+	</footer>
 </body>
 </html>

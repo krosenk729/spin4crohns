@@ -2,10 +2,13 @@
 // #11998e
 // #38ef7d
 // https://online.crohnscolitisfoundation.org/images/content/pagebuilder/how_it_works_hero.jpg
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Poppins:900');
 $font-fam-headers: 'Poppins', sans-serif;
 $font-fam-body: 'Open Sans', sans-serif;
 
+$c-grey-1: #EEEEEE;
+$c-grey-2: #999999;
+$c-grey-3: #EEEEEE;
 $c-dark-grey: #666666;
 $c-yellow-accent: #f7ca00;
 $c-blue-accent: #b4da55;
@@ -18,7 +21,7 @@ $gutter: 25px;
 
 /* Shared Layout & Global Styles
 ========================================================================== */
-html, body, div, span, applet, object, iframe,
+html, body, div, applet, object, iframe,
 p, blockquote, pre, a, abbr, acronym, code,
 em, img, ins, kbd, q, s, samp, small, strike,
 strong, ol, ul, li, fieldset, form, label, legend,
@@ -38,23 +41,23 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 {
-	font-size: 2.5rem;
+	font-size: 3rem;
 }
 
 h2, .h2 {
-	font-size: 2rem;
+	font-size: 2.5rem;
 }
 
 h3, .h3 {
-	font-size: 1.75rem;
+	font-size: 2rem;
 }
 
 h4, .h4 {
-	font-size: 1.5rem;
+	font-size: 1.8rem;
 }
 
 h5, .h5 {
-	font-size: 1.25rem;
+	font-size: 1.5rem;
 }
 
 h6, .h6 {
@@ -65,8 +68,18 @@ p {
 	margin-bottom: 1em;
 }
 
+a {
+	color: inherit;
+	font-weight: bold;
+	text-decoration: none;
+}
+
 .center {
 	text-align: center;
+}
+
+.pt-1 {
+	padding-top: 1em;
 }
 
 .my-2 {
@@ -75,15 +88,15 @@ p {
 }
 
 .row {
-  min-height: 100px;
-  padding-left: $gutter;
-  padding-right: $gutter;
+	position: relative;
+	min-height: 100px;
+	padding-left: $gutter;
+	padding-right: $gutter;
 }
 
 .btn {
 	background: $c-yellow-accent;
 	padding: 14px;
-	text-decoration: none;
 
 }
 
@@ -98,53 +111,29 @@ p {
 
 /* Header
 ========================================================================== */
-$bg-cutover: 470px;
 
 .header {
-	min-height: $grid-size * 2;
-
-	&:before {
-		z-index: -100;
-		content: "";
-		position: absolute;
-		top: -75px;
-		left: 0;
-		width: 100%;
-		height: $bg-cutover;
-		background: $c-green-2;
-		background: linear-gradient(57deg, $c-green-1 0%, $c-green-2 100%);
-		-webkit-transform-origin: bottom;
-		transform-origin: bottom;
-		-webkit-transform: skewY(4deg);
-		transform: skewY(4deg);
-
-		@media screen and (max-width: 600px) {
-			height: 1.7 * $bg-cutover;
-		}
-	}
 
 	&__floating-outro {
+		z-index: 10;
 		position: fixed;
 		top: 46px;
 		right: -96px;
 		transform: rotate(35deg);
 		background: $c-yellow-accent;
 		padding: $grid-size/2 100px;
-
-		a {
-			text-decoration: none;
-		}
 	}
 }
-
 
 /* Banner
 ========================================================================== */
 .banner {
+	padding-top: 2 * $grid-size;
 	display: grid;
 	grid-template-columns: minmax(200px, 65%) minmax(200px, 35%);
 	grid-template-rows: auto;
 	grid-gap: 1em;
+	background: linear-gradient(57deg, $c-green-1 0%, $c-green-2 100%);
 
 	@media screen and (max-width: 600px) {
 		grid-template-columns: 1fr;
@@ -152,9 +141,10 @@ $bg-cutover: 470px;
 
 	&__content {
 		margin-bottom: 1em;
+		z-index: 1;
 
 		h1, p {
-			mix-blend-mode: difference;
+			color: white;
 		}
 
 		figure {
@@ -172,6 +162,18 @@ $bg-cutover: 470px;
 			}
 		}
 
+	}
+
+	&__bg-clip {
+		svg {
+			fill: white;
+			transform: rotate(180deg) scaleX(-1);
+			width: 100%;
+			position: absolute;
+			left: 0;
+			bottom: -2px;
+			z-index: 0;
+		}
 	}
 }
 
@@ -221,6 +223,12 @@ $bg-cutover: 470px;
 $toggle-padding: 4px;
 $toggle-height: 25px;
 $toggle-width: 75px;
+
+$c-toggle-bg: #BEEB9F;
+$c-toggle-off: #f00;
+$c-toggle-on: #BAE59B;
+$c-toggle-on-2: #79BD8F;
+
 .checkbox {
 	width: $toggle-width;
 	height: $toggle-height;
@@ -240,14 +248,14 @@ $toggle-width: 75px;
 	}
 
 	&__toggle {
-		background: #f00;
+		background: $c-toggle-off;
 		position: absolute;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
 		z-index: 1;
-		background-color: #BEEB9F;
+		background-color: $c-toggle-bg;
 		line-height: 1;
 		color: #fff;
 		transition: background-color .15s ease-out;
@@ -267,7 +275,7 @@ $toggle-width: 75px;
 			bottom: $toggle-padding;
 			padding: 0 12px;
 			border-radius: 2px;
-			background-color: #FF6138;
+			background-color: $c-toggle-off;
 			content: attr(data-label-unchecked);
 			transition: all .15s ease-out;
 			min-width: $toggle-height - (2 * $toggle-padding);
@@ -275,7 +283,7 @@ $toggle-width: 75px;
 		}
 
 		.checkbox__input:hover + & {
-			background-color: #BAE59B;
+			background-color: $c-toggle-on;
 		}
 
 		.checkbox__input:active + &::before {
@@ -283,7 +291,7 @@ $toggle-width: 75px;
 		}
 
 		.checkbox__input:checked + &::before {
-			background-color: #79BD8F;
+			background-color: $c-toggle-on-2;
 			content: attr(data-label-checked);
 			left: calc(100% - #{$toggle-padding});
 			transform: translateX(-100%);
@@ -292,14 +300,58 @@ $toggle-width: 75px;
 }
 
 
-/* Final
+/* What Is
 ========================================================================== */
 
+.what-is {
+	background: linear-gradient(57deg, $c-green-1 0%, $c-green-2 100%);
 
+	h2, h3, p {
+		color: white;
+	}
+
+	&__bg-clip {
+		svg {
+			fill: white;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top: -2px;
+			z-index: 0;
+		}
+	}
+}
+
+
+/* Social Share
+========================================================================== */
+.social {
+	padding-bottom: 2em;
+
+	h3 {
+		mix-blend-mode: soft-light;
+	}
+
+	&__share {
+		text-decoration: none;
+		margin-left: .35em;
+		margin-right: .35em;
+
+		svg {
+			width: $grid-size * 4;
+
+			path { fill: white }
+		}
+	}
+}
 
 /* Footer
 ========================================================================== */
-
+.footer {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	background: $c-yellow-accent;
+}
 
 
 
