@@ -9,7 +9,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, figure,
 figcaption, footer, header, hgroup, menu, nav {
   font-family: "Open Sans", sans-serif;
-  color: #666666;
+  color: #616161;
   line-height: 1.2;
 }
 
@@ -62,6 +62,14 @@ a {
   padding-top: 1em;
 }
 
+.pt-2 {
+  padding-top: 2em;
+}
+
+.pb-2 {
+  padding-bottom: 2em;
+}
+
 .my-2 {
   margin-top: 2em;
   margin-bottom: 2em;
@@ -76,12 +84,24 @@ a {
 
 .btn {
   background: #f7ca00;
+  border: 1px solid #faa700;
   padding: 14px;
+  box-shadow: 1px 1px 4px #0006;
 }
 
 .emphasis {
   font-weight: bold;
   font-style: italic;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 /* Header
@@ -94,6 +114,7 @@ a {
   transform: rotate(35deg);
   background: #f7ca00;
   padding: 4px 100px;
+  box-shadow: 1px 1px 4px #0006;
 }
 
 /* Banner
@@ -146,16 +167,26 @@ a {
 .spend-calc {
   display: grid;
   grid-template-rows: repeat(auto-fill, 100%);
+  max-width: 550px;
+  margin: 0 auto;
 }
 .spend-calc__row {
   display: grid;
   align-items: baseline;
   grid-template-areas: "check label amt total";
-  grid-template-columns: minmax(35px, 20%) minmax(35px, 30%) minmax(35px, 25%) minmax(35px, 25%);
+  grid-template-columns: minmax(75px, 20%) minmax(35px, 40%) minmax(25px, 1fr) minmax(55px, 1fr);
+  border-bottom: 0.25px solid #EEEEEE;
 }
 .spend-calc__row > div {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.spend-calc__row--total {
   padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 8px;
+}
+.spend-calc__row--total div {
+  font-family: "Poppins", sans-serif;
 }
 .spend-calc__check {
   grid-area: check;
@@ -168,11 +199,11 @@ a {
 }
 .spend-calc__amount input {
   display: inline;
-  width: 70px;
+  width: 80%;
   font-size: 1em;
-}
-.spend-calc__total {
-  grid-area: total;
+  color: #616161;
+  border: 0;
+  border-bottom: 1px solid #999999;
 }
 
 .checkbox {
@@ -185,7 +216,7 @@ a {
   z-index: 2;
   width: 100%;
   height: 100%;
-  background: #f00;
+  background: #616161;
   margin: 0;
   padding: 0;
   cursor: pointer;
@@ -193,14 +224,14 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .checkbox__toggle {
-  background: #f00;
+  background: #616161;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 1;
-  background-color: #BEEB9F;
+  background-color: #F5F5F5;
   line-height: 1;
   color: #fff;
   transition: background-color 0.15s ease-out;
@@ -220,14 +251,14 @@ a {
   bottom: 4px;
   padding: 0 12px;
   border-radius: 2px;
-  background-color: #f00;
+  background-color: #616161;
   content: attr(data-label-unchecked);
   transition: all 0.15s ease-out;
-  min-width: 17px;
+  min-width: 4px;
   border-radius: 25px;
 }
 .checkbox__input:hover + .checkbox__toggle {
-  background-color: #BAE59B;
+  background-color: #BDBDBD;
 }
 .checkbox__input:active + .checkbox__toggle::before {
   padding: 0 20px;
@@ -282,6 +313,7 @@ a {
   padding-top: 1em;
   padding-bottom: 1em;
   background: #f7ca00;
+  border-top: 1px solid #faa700;
 }
 
 /*# sourceMappingURL=style.css.map */

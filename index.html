@@ -18,7 +18,7 @@
 		</div>
 	</header>
 	<div class="row banner">
-		<div class="banner__content">
+		<div class="banner__content pb-2">
 			<img
 				class="logo"
 				src="assets/logo_white.png"
@@ -52,14 +52,14 @@
 	</div>
 	<div class="center pt-1 h2">🚴‍♂️🎉🚴‍♂️🎉🚴‍♂️🎉🚴‍♂️</div>
 	<section class="row pt-1 calculator">
-		<h2>Match Your Streaming Spending</h2>
+		<h2>Make a Difference & Match Your Streaming Spending</h2>
+		<h4>How Much Do You Stream?</h4>
 		<p class="my-2">I'm asking you to match your spending on Netflix, Hulu, HBO, Disney TV, and whatever other streaming services you pay for. Pretend the year has some extra time in it and just put that difference into the donations bank – both your tax return and I will thank you.</p>
-		<h4>How Much Do You Spend?</h4>
-		<div class="spend-calc">
+		<div class="spend-calc pb-2">
 			<div class="spend-calc__row">
 				<div class="spend-calc__check">
 					<div class="checkbox">
-					<input class="checkbox__input" type="checkbox" name="netflix_on" />
+					<input class="checkbox__input" type="checkbox" name="netflix_on" checked />
 					<div class="checkbox__toggle" data-label-checked="✔️" data-label-unchecked="🚫"></div>
 					</div>
 				</div>
@@ -67,16 +67,16 @@
 					Netflix
 				</div>
 				<div class="spend-calc__amount">
-					<input type="number" name="netflix_price" name="netflix_price" value="12.99" step="0.01" />
+					<input type="number" id="netflix_price" name="netflix_price" value="12.99" step="0.01" />
 				</div>
 				<div class="spend-calc__qty">
-					<label name="netflix_price">/ month</label>
+					<label for="netflix_price">/ month</label>
 				</div>
 			</div>
 			<div class="spend-calc__row">
 				<div class="spend-calc__check">
 					<div class="checkbox">
-					<input class="checkbox__input" type="checkbox" name="netflix_on" />
+					<input class="checkbox__input" type="checkbox" name="hulu_on" checked />
 					<div class="checkbox__toggle" data-label-checked="✔️" data-label-unchecked="🚫"></div>
 					</div>
 				</div>
@@ -84,33 +84,33 @@
 					Hulu
 				</div>
 				<div class="spend-calc__amount">
-					<input type="number" name="hulu_price" name="hulu_price" value="11.99" step="0.01" />
+					<input type="number" id="hulu_price" name="hulu_price" value="11.99" step="0.01" />
 				</div>
 				<div class="spend-calc__qty">
-					<label name="hulu_price">/ month</label>
+					<label for="hulu_price">/ month</label>
 				</div>
 			</div>
 			<div class="spend-calc__row">
 				<div class="spend-calc__check">
 					<div class="checkbox">
-					<input class="checkbox__input" type="checkbox" name="netflix_on" />
+					<input class="checkbox__input" type="checkbox" name="hbo_on" />
 					<div class="checkbox__toggle" data-label-checked="✔️" data-label-unchecked="🚫"></div>
 					</div>
 				</div>
 				<div class="spend-calc__label">
-					HBO Go
+					HBO
 				</div>
 				<div class="spend-calc__amount">
-					<input type="number" name="hbo_price" name="hbo_price" step="0.01" />
+					<input type="number" id="hbo_price" name="hbo_price" value="14.99" step="0.01" />
 				</div>
 				<div class="spend-calc__qty">
-					<label name="hbo_price">/ month</label>
+					<label for="hbo_price">/ month</label>
 				</div>
 			</div>
 			<div class="spend-calc__row">
 				<div class="spend-calc__check">
 					<div class="checkbox">
-					<input class="checkbox__input" type="checkbox" name="netflix_on" />
+					<input class="checkbox__input" type="checkbox" name="prime_on" />
 					<div class="checkbox__toggle" data-label-checked="✔️" data-label-unchecked="🚫"></div>
 					</div>
 				</div>
@@ -118,16 +118,33 @@
 					Amazon Prime
 				</div>
 				<div class="spend-calc__amount">
-					<input type="number" name="amazonprime_price" name="amazonprime_price" step="0.01" />
+					<input type="number" id="prime_price" name="prime_price" value="12.99" step="0.01" />
 				</div>
 				<div class="spend-calc__qty">
-					<label name="amazonprime_price">/ month</label>
+					<label for="amazonprime_price">/ month</label>
 				</div>
 			</div>
 			<div class="spend-calc__row">
 				<div class="spend-calc__check">
 					<div class="checkbox">
-					<input class="checkbox__input" type="checkbox" name="netflix_on" />
+					<input class="checkbox__input" type="checkbox" name="com_on" />
+					<div class="checkbox__toggle" data-label-checked="✔️" data-label-unchecked="🚫"></div>
+					</div>
+				</div>
+				<div class="spend-calc__label">
+					Commcast
+				</div>
+				<div class="spend-calc__amount">
+					<input type="number" id="com_price" name="com_price" value="12.99" step="0.01" />
+				</div>
+				<div class="spend-calc__qty">
+					<label for="com_price">/ month</label>
+				</div>
+			</div>
+			<div class="spend-calc__row">
+				<div class="spend-calc__check">
+					<div class="checkbox">
+					<input class="checkbox__input" type="checkbox" name="directv_on" />
 					<div class="checkbox__toggle" data-label-checked="✔️" data-label-unchecked="🚫"></div>
 					</div>
 				</div>
@@ -135,16 +152,16 @@
 					DirecTV
 				</div>
 				<div class="spend-calc__amount">
-					<input type="number" name="directv_price" name="directv_price" step="0.01" />
+					<input type="number" id="directv_price" name="directv_price" value="45.00" step="0.01" />
 				</div>
 				<div class="spend-calc__qty">
-					<label name="directv_price">/ month</label>
+					<label for="directv_price">/ month</label>
 				</div>
 			</div>
 			<div class="spend-calc__row">
 				<div class="spend-calc__check">
 					<div class="checkbox">
-					<input class="checkbox__input" type="checkbox" name="netflix_on" />
+					<input class="checkbox__input" type="checkbox" name="disney_on" />
 					<div class="checkbox__toggle" data-label-checked="✔️" data-label-unchecked="🚫"></div>
 					</div>
 				</div>
@@ -152,10 +169,10 @@
 					Disney Plus
 				</div>
 				<div class="spend-calc__amount">
-					<input type="number" name="disney_price" name="disney_price" step="0.01" />
+					<input type="number" id="disney_price" name="disney_price" value="6.99" step="0.01" />
 				</div>
 				<div class="spend-calc__qty">
-					<label name="disney_price">/ month</label>
+					<label for="disney_price">/ month</label>
 				</div>
 			</div>
 			<div class="spend-calc__row spend-calc__row--total">
@@ -165,11 +182,6 @@
 				</div>
 				<div class="spend-calc__amount"></div>
 				<div class="spend-calc__qty">
-					<select>
-						<option value="1">/ month</option>
-						<option value="3">/ quarter</option>
-						<option value="12">/ year</option>
-					</select>
 				</div>
 			</div>
 		</div>
@@ -177,7 +189,7 @@
 			<a
 				href="https://online.crohnscolitisfoundation.org/site/Donation2?idb=122457690&df_id=28291&FR_ID=8416&mfc_pref=T&28291.donation=form1&PROXY_ID=2976252&PROXY_TYPE=20"
 				class="btn">
-				Make a Donation Now
+				Make a <span id="btn-qty"></span> Donation Now
 			</a>
 		</div>
 		<div class="center pt-1 h2">🚴‍♂️🎉🚴‍♂️🎉🚴‍♂️🎉🚴‍♂️</div>
@@ -200,14 +212,17 @@
 					  var isChecked = check.children[0].firstElementChild.checked;
 					  if(!isChecked) { continue; }
 					  var cost = amt.children[0].value;
-					  total += Number(cost);
+					  total += Number(cost)
 					}
-					document.querySelector('.spend-calc__row--total .spend-calc__amount').innerText = total;
+					var toFixed = Number.parseFloat(total).toFixed(2);
+					document.querySelector('.spend-calc__row--total .spend-calc__amount').innerText = toFixed;
+					document.querySelector('#btn-qty').innerText = `$${Math.round(toFixed)}`;
 				};
 
 				document.querySelectorAll('input').forEach(function(node){
 					node.onchange = calcTotals;
 				});
+				calcTotals();
 			})();
 		</script>
 	</section>
@@ -219,7 +234,7 @@
 				<path class="elementor-shape-fill" style="opacity:0.25" d="M2600 0L0 0 0 130.1 2600 69.1z"></path>
 			</svg>
 		</span>
-		<h2 class="pt-1">Wait, What is Crohn's Disease?</h2>
+		<h2 class="pt-2">Wait, What is Crohn's Disease?</h2>
 		<p>Well, it's not good...</p>
 		<p>Crohn's is a <span class="emphasis">chronic inflammatory condition</span> of the gastrointestinal tract -- which a really long, really important part of your body. If food flows through it from when you eat to when you 💩, it is a part of the GI tract. Now imagine if that tract has inflammation and that inflamamation does not subside - it's chronic. Not ideal right?</p>
 		<p>There is no cure to crohn's but there are treatment options to help with flare-ups and prevent relapses... but half of all patients with crohn's require surgery in the first ten years following diagnosis, and 20% are admitted to the hospital each year. <a href="https://online.crohnscolitisfoundation.org/site/SPageServer/?pagename=awareness_stories_home" target="_blank">Click here to read patient stories of living with Crohn's & Colitis.</a></p>

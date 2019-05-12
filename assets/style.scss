@@ -8,9 +8,9 @@ $font-fam-body: 'Open Sans', sans-serif;
 
 $c-grey-1: #EEEEEE;
 $c-grey-2: #999999;
-$c-grey-3: #EEEEEE;
-$c-dark-grey: #666666;
-$c-yellow-accent: #f7ca00;
+$c-grey-3: #616161;
+$c-yellow-1: #f7ca00;
+$c-yellow-2: #faa700;
 $c-blue-accent: #b4da55;
 $c-green-1: #8cc62b;
 $c-green-2: #269d41;
@@ -29,7 +29,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, figure,
 figcaption, footer, header, hgroup, menu, nav {
 	font-family: $font-fam-body;
-	color: $c-dark-grey;
+	color: $c-grey-3;
 	line-height: 1.2;
 }
 
@@ -82,6 +82,14 @@ a {
 	padding-top: 1em;
 }
 
+.pt-2 {
+	padding-top: 2em;
+}
+
+.pb-2 {
+	padding-bottom: 2em;
+}
+
 .my-2 {
 	margin-top: 2em;
 	margin-bottom: 2em;
@@ -95,8 +103,10 @@ a {
 }
 
 .btn {
-	background: $c-yellow-accent;
+	background: $c-yellow-1;
+	border: 1px solid $c-yellow-2;
 	padding: 14px;
+	box-shadow: 1px 1px 4px #0006;
 
 }
 
@@ -107,6 +117,16 @@ a {
 .emphasis {
 	font-weight: bold;
 	font-style: italic;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type=number] {
+	-moz-appearance:textfield;
 }
 
 /* Header
@@ -120,8 +140,9 @@ a {
 		top: 46px;
 		right: -96px;
 		transform: rotate(35deg);
-		background: $c-yellow-accent;
+		background: $c-yellow-1;
 		padding: $grid-size/2 100px;
+		box-shadow: 1px 1px 4px #0006;
 	}
 }
 
@@ -184,16 +205,25 @@ a {
 .spend-calc {
 	display: grid;
 	grid-template-rows: repeat(auto-fill, 100%);
+	max-width: 550px;
+	margin: 0 auto;
 
 	&__row {
 		display: grid;
 		align-items: baseline;
 		grid-template-areas: "check label amt total";
-		grid-template-columns: minmax(35px, 20%) minmax(35px, 30%) minmax(35px, 25%) minmax(35px, 25%);
+		grid-template-columns: minmax(75px, 20%) minmax(35px, 40%) minmax(25px, 1fr) minmax(55px, 1fr);
+		border-bottom: .25px solid $c-grey-1;
 
 		& > div {
+			padding-top: $grid-size * 3 / 4;
+			padding-bottom: $grid-size * 3 / 4;
+		}
+
+		&--total {
 			padding-top: $grid-size;
-			padding-bottom: $grid-size;
+			padding-top: $grid-size;
+			div { font-family: $font-fam-headers }
 		}
 	}
 
@@ -209,23 +239,22 @@ a {
 		grid-area: amt;
 		input {
 			display: inline;
-			width: 70px;
+			width: 80%;
 			font-size: 1em;
+			color: $c-grey-3;
+			border: 0;
+			border-bottom: 1px solid $c-grey-2;
 		}
 	}
-
-	&__total {
-		grid-area: total;
-	}
-
 }
 
 $toggle-padding: 4px;
 $toggle-height: 25px;
 $toggle-width: 75px;
 
-$c-toggle-bg: #BEEB9F;
-$c-toggle-off: #f00;
+$c-toggle-bg: #F5F5F5;
+$c-toggle-hov: #BDBDBD;
+$c-toggle-off: #616161;
 $c-toggle-on: #BAE59B;
 $c-toggle-on-2: #79BD8F;
 
@@ -239,7 +268,7 @@ $c-toggle-on-2: #79BD8F;
 		z-index: 2;
 		width: 100%;
 		height: 100%;
-		background: #f00;
+		background: $c-toggle-off;
 		margin: 0;
 		padding: 0;
 		cursor: pointer;
@@ -278,12 +307,12 @@ $c-toggle-on-2: #79BD8F;
 			background-color: $c-toggle-off;
 			content: attr(data-label-unchecked);
 			transition: all .15s ease-out;
-			min-width: $toggle-height - (2 * $toggle-padding);
+			min-width: 4px;
 			border-radius: $toggle-height;
 		}
 
 		.checkbox__input:hover + & {
-			background-color: $c-toggle-on;
+			background-color: $c-toggle-hov;
 		}
 
 		.checkbox__input:active + &::before {
@@ -350,7 +379,8 @@ $c-toggle-on-2: #79BD8F;
 .footer {
 	padding-top: 1em;
 	padding-bottom: 1em;
-	background: $c-yellow-accent;
+	background: $c-yellow-1;
+	border-top: 1px solid $c-yellow-2;
 }
 
 
