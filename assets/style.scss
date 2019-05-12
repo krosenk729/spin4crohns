@@ -11,7 +11,7 @@ $c-grey-2: #999999;
 $c-grey-3: #616161;
 $c-yellow-1: #f7ca00;
 $c-yellow-2: #faa700;
-$c-blue-accent: #b4da55;
+$c-blue-accent: #008cd1;
 $c-green-1: #8cc62b;
 $c-green-2: #269d41;
 
@@ -21,10 +21,10 @@ $gutter: 25px;
 
 /* Shared Layout & Global Styles
 ========================================================================== */
-html, body, div, applet, object, iframe,
+html, body, applet, object, iframe, label,
 p, blockquote, pre, a, abbr, acronym, code,
 em, img, ins, kbd, q, s, samp, small, strike,
-strong, ol, ul, li, fieldset, form, label, legend,
+strong, ol, ul, li, fieldset, form, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, figure,
 figcaption, footer, header, hgroup, menu, nav {
@@ -72,6 +72,7 @@ a {
 	color: inherit;
 	font-weight: bold;
 	text-decoration: none;
+	font-family: $font-fam-headers;
 }
 
 .center {
@@ -111,7 +112,7 @@ a {
 }
 
 .bordered {
-
+	border: 1.2px solid $c-blue-accent;
 }
 
 .emphasis {
@@ -214,6 +215,7 @@ input[type=number] {
 		grid-template-areas: "check label amt total";
 		grid-template-columns: minmax(75px, 20%) minmax(35px, 40%) minmax(25px, 1fr) minmax(55px, 1fr);
 		border-bottom: .25px solid $c-grey-1;
+		font-family: $font-fam-headers;
 
 		& > div {
 			padding-top: $grid-size * 3 / 4;
@@ -223,7 +225,6 @@ input[type=number] {
 		&--total {
 			padding-top: $grid-size;
 			padding-top: $grid-size;
-			div { font-family: $font-fam-headers }
 		}
 	}
 
@@ -244,6 +245,7 @@ input[type=number] {
 			color: $c-grey-3;
 			border: 0;
 			border-bottom: 1px solid $c-grey-2;
+			font-family: $font-fam-headers;
 		}
 	}
 }
@@ -256,7 +258,7 @@ $c-toggle-bg: #F5F5F5;
 $c-toggle-hov: #BDBDBD;
 $c-toggle-off: #616161;
 $c-toggle-on: #BAE59B;
-$c-toggle-on-2: #79BD8F;
+$c-toggle-on-2: $c-green-1;
 
 .checkbox {
 	width: $toggle-width;

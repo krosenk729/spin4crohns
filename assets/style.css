@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Poppins:900");
 /* Shared Layout & Global Styles
 ========================================================================== */
-html, body, div, applet, object, iframe,
+html, body, applet, object, iframe, label,
 p, blockquote, pre, a, abbr, acronym, code,
 em, img, ins, kbd, q, s, samp, small, strike,
-strong, ol, ul, li, fieldset, form, label, legend,
+strong, ol, ul, li, fieldset, form, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, figure,
 figcaption, footer, header, hgroup, menu, nav {
@@ -52,6 +52,7 @@ a {
   color: inherit;
   font-weight: bold;
   text-decoration: none;
+  font-family: "Poppins", sans-serif;
 }
 
 .center {
@@ -87,6 +88,10 @@ a {
   border: 1px solid #faa700;
   padding: 14px;
   box-shadow: 1px 1px 4px #0006;
+}
+
+.bordered {
+  border: 1.2px solid #008cd1;
 }
 
 .emphasis {
@@ -176,6 +181,7 @@ input[type=number] {
   grid-template-areas: "check label amt total";
   grid-template-columns: minmax(75px, 20%) minmax(35px, 40%) minmax(25px, 1fr) minmax(55px, 1fr);
   border-bottom: 0.25px solid #EEEEEE;
+  font-family: "Poppins", sans-serif;
 }
 .spend-calc__row > div {
   padding-top: 6px;
@@ -184,9 +190,6 @@ input[type=number] {
 .spend-calc__row--total {
   padding-top: 8px;
   padding-top: 8px;
-}
-.spend-calc__row--total div {
-  font-family: "Poppins", sans-serif;
 }
 .spend-calc__check {
   grid-area: check;
@@ -204,6 +207,7 @@ input[type=number] {
   color: #616161;
   border: 0;
   border-bottom: 1px solid #999999;
+  font-family: "Poppins", sans-serif;
 }
 
 .checkbox {
@@ -264,7 +268,7 @@ input[type=number] {
   padding: 0 20px;
 }
 .checkbox__input:checked + .checkbox__toggle::before {
-  background-color: #79BD8F;
+  background-color: #8cc62b;
   content: attr(data-label-checked);
   left: calc(100% - 4px);
   transform: translateX(-100%);
