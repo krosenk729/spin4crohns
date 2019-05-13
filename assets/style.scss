@@ -252,7 +252,7 @@ input[type=number] {
 
 $toggle-padding: 4px;
 $toggle-height: 25px;
-$toggle-width: 75px;
+$toggle-width: 60px;
 
 $c-toggle-bg: #F5F5F5;
 $c-toggle-hov: #BDBDBD;
@@ -304,7 +304,7 @@ $c-toggle-on-2: $c-green-1;
 			top: $toggle-padding;
 			left: $toggle-padding;
 			bottom: $toggle-padding;
-			padding: 0 12px;
+			padding: 0 $toggle-padding;
 			border-radius: 2px;
 			background-color: $c-toggle-off;
 			content: attr(data-label-unchecked);
