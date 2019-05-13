@@ -171,7 +171,7 @@ input[type=number] {
 ========================================================================== */
 .spend-calc {
   display: grid;
-  grid-template-rows: repeat(auto-fill, 100%);
+  grid-auto-rows: 1fr;
   max-width: 550px;
   margin: 0 auto;
 }
