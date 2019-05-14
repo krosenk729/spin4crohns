@@ -191,6 +191,11 @@ input[type=number] {
   padding-top: 8px;
   padding-top: 8px;
 }
+.spend-calc__row--total select {
+  font-size: 1.1em;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
 .spend-calc__check {
   grid-area: check;
 }
@@ -208,6 +213,9 @@ input[type=number] {
   border: 0;
   border-bottom: 1px solid #999999;
   font-family: "Poppins", sans-serif;
+}
+.spend-calc__qty {
+  grid-area: total;
 }
 
 .checkbox {

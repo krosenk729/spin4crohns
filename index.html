@@ -182,6 +182,11 @@
 				</div>
 				<div class="spend-calc__amount"></div>
 				<div class="spend-calc__qty">
+					<select name="frequency">
+						<option value="1">/ mo</option>
+						<option value="3">/ qtr</option>
+						<option value="12">/ yr</option>
+					</select>
 				</div>
 			</div>
 		</div>
@@ -207,19 +212,23 @@
 				var calcTotals = function(){
 					var rows = document.querySelectorAll('.spend-calc__row');
 					var total = 0;
-					for(var i = 0, l = rows.length - 1; i < l; i++ ) {
+					var l = rows.length - 1;
+					var t = rows[l];
+					var [a, b, totDisplay, c] = t.children;
+					var f = c.firstElementChild.value;
+					for(var i = 0; i < l; i++ ) {
 					  var [check, label, amt, ...rest] = rows[i].children;
 					  var isChecked = check.children[0].firstElementChild.checked;
 					  if(!isChecked) { continue; }
 					  var cost = amt.children[0].value;
-					  total += Number(cost)
+					  total += Number(cost);
 					}
-					var toFixed = Number.parseFloat(total).toFixed(2);
-					document.querySelector('.spend-calc__row--total .spend-calc__amount').innerText = toFixed;
+					var toFixed = Number.parseFloat(total * f).toFixed(2);
+					totDisplay.innerText = toFixed;
 					document.querySelector('#btn-qty').innerText = `$${Math.round(toFixed)}`;
 				};
 
-				document.querySelectorAll('input').forEach(function(node){
+				document.querySelectorAll('input, select').forEach(function(node){
 					node.onchange = calcTotals;
 				});
 				calcTotals();
@@ -254,7 +263,7 @@
 		</div>
 		<script>
 			(function(){
-				var url = encodeURI( window.location.toString() );
+				var url = encodeURIComponent( window.location.toString() );
 				var fb = 'https://www.facebook.com/sharer/sharer.php?u=<' + url;
 				var tw  = 'https://twitter.com/intent/tweet?text=' + url;
 				var em = 'mailto:?subject=' + encodeURIComponent('Donate to Spin4Crohns for Katherine') + '&body=' + encodeURIComponent('Donate to Spin4Crohns for Katherine by going to ') + url;
