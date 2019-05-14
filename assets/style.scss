@@ -46,6 +46,10 @@ h1, .h1 {
 
 h2, .h2 {
 	font-size: 2.5rem;
+	// ghetto fix for emoji size on mobile
+	@media screen and (max-width: 400px) {
+		font-size: 2.1rem;
+	}
 }
 
 h3, .h3 {
@@ -370,7 +374,7 @@ $c-toggle-on-2: $c-green-1;
 	padding-bottom: 2em;
 
 	h3 {
-		mix-blend-mode: soft-light;
+		opacity: .7;
 	}
 
 	&__share {
